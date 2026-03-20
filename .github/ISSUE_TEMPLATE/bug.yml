@@ -1,0 +1,53 @@
+name: "\U0001F41B 버그 신고"
+description: "안 되는 것, 깨지는 것, 에러가 나는 것"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **한 가지 버그만 작성해주세요.** 여러 개면 따로 작성해주세요.
+        **개인정보(전화번호, 주소), 계약 금액 등 민감 정보는 절대 작성하지 마세요.**
+  - type: input
+    id: where
+    attributes:
+      label: "어디에서 발생했나요?"
+      description: "페이지 이름이나 URL"
+      placeholder: "예: 코치 상세페이지, classhub.co.kr/coaches"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: "무엇이 문제인가요?"
+      description: "어떤 동작을 했을 때, 어떤 문제가 생기는지 적어주세요"
+      placeholder: "예: 결제 버튼을 눌렀는데 아무 반응이 없음"
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "스크린샷"
+      description: "화면 캡처를 붙여주세요 (드래그 앤 드롭)"
+    validations:
+      required: false
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "긴급도"
+      options:
+        - "\U0001F534 긴급 (지금 안 되면 업무 불가)"
+        - "\U0001F7E1 이번 주 (빠른 시일 내 처리 필요)"
+        - "\U0001F7E2 여유 (시간 될 때 처리)"
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: "요청 파트"
+      options:
+        - "운영"
+        - "마케팅"
+        - "디자인"
+        - "기타"
+    validations:
+      required: true

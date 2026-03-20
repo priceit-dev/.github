@@ -1,0 +1,61 @@
+name: "\u270F\uFE0F 수정 요청"
+description: "텍스트, 이미지, 데이터 등 바꿔야 하는 것"
+labels: ["수정요청"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **한 가지만 작성해주세요.** 여러 개면 따로 작성해주세요.
+        **개인정보(전화번호, 주소), 계약 금액 등 민감 정보는 절대 작성하지 마세요.**
+  - type: input
+    id: where
+    attributes:
+      label: "어디를 수정해야 하나요?"
+      description: "페이지 이름이나 URL"
+      placeholder: "예: 코치 프로필 페이지"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: "현재 상태"
+      description: "지금 어떻게 되어 있는지"
+      placeholder: "예: 코치 사진이 예전 사진으로 되어 있음"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "수정 후 원하는 상태"
+      description: "어떻게 바뀌어야 하는지"
+      placeholder: "예: 새 프로필 사진으로 교체 (첨부 참고)"
+    validations:
+      required: true
+  - type: textarea
+    id: attachment
+    attributes:
+      label: "첨부 파일 / 스크린샷"
+      description: "교체할 이미지나 참고 자료"
+    validations:
+      required: false
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "긴급도"
+      options:
+        - "\U0001F534 긴급 (지금 안 되면 업무 불가)"
+        - "\U0001F7E1 이번 주 (빠른 시일 내 처리 필요)"
+        - "\U0001F7E2 여유 (시간 될 때 처리)"
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: "요청 파트"
+      options:
+        - "운영"
+        - "마케팅"
+        - "디자인"
+        - "기타"
+    validations:
+      required: true

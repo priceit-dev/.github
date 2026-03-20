@@ -1,0 +1,62 @@
+name: "\U0001F50D QA"
+description: "테스트 중 발견한 것 (MC beta 등)"
+labels: ["QA"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **한 가지만 작성해주세요.** 여러 개면 따로 작성해주세요.
+        **개인정보(전화번호, 주소), 계약 금액 등 민감 정보는 절대 작성하지 마세요.**
+  - type: input
+    id: where
+    attributes:
+      label: "어디에서 발견했나요?"
+      description: "페이지 이름이나 URL"
+      placeholder: "예: MC 코치허브 > 코치 등록"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "어떻게 하면 재현되나요?"
+      description: "순서대로 적어주세요"
+      placeholder: |
+        1. 코치허브 진입
+        2. 코치 등록 버튼 클릭
+        3. 이름만 입력하고 저장 클릭
+        4. 에러 발생
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "기대한 동작"
+      description: "원래 어떻게 되어야 하는지"
+      placeholder: "예: 필수 항목 미입력 시 빨간 안내 메시지"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "실제 동작"
+      description: "실제로 어떻게 되었는지"
+      placeholder: "예: 화면이 멈추고 아무 반응 없음"
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "스크린샷"
+      description: "화면 캡처를 붙여주세요"
+    validations:
+      required: false
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "긴급도"
+      options:
+        - "\U0001F534 긴급 (핵심 기능 불가)"
+        - "\U0001F7E1 이번 주"
+        - "\U0001F7E2 여유 (사소한 이슈)"
+    validations:
+      required: true

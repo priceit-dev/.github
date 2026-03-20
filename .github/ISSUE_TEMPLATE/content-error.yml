@@ -1,0 +1,53 @@
+name: "\U0001F4DD 내용 오류"
+description: "문서나 정보가 틀린 것, 빠진 것, 옛날 정보인 것"
+labels: ["내용오류"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **한 가지만 작성해주세요.** 여러 개면 따로 작성해주세요.
+        **개인정보(전화번호, 주소), 계약 금액 등 민감 정보는 절대 작성하지 마세요.**
+  - type: input
+    id: where
+    attributes:
+      label: "어떤 문서/페이지인가요?"
+      description: "파일명이나 페이지 이름"
+      placeholder: "예: wiki의 코치 가이드 문서"
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: "어떤 내용이 틀린가요?"
+      description: "틀린 부분을 구체적으로 적어주세요"
+      placeholder: "예: 수강료가 199만원으로 되어 있는데 실제는 299만원"
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: "올바른 내용"
+      description: "맞는 내용이 뭔지 알면 적어주세요 (모르면 비워도 됩니다)"
+    validations:
+      required: false
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "긴급도"
+      options:
+        - "\U0001F534 긴급 (고객에게 잘못된 정보 노출 중)"
+        - "\U0001F7E1 이번 주"
+        - "\U0001F7E2 여유"
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: "요청 파트"
+      options:
+        - "운영"
+        - "마케팅"
+        - "디자인"
+        - "기타"
+    validations:
+      required: true
