@@ -49,6 +49,15 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: category
+    attributes:
+      label: "구분"
+      options:
+        - "\U0001F4C4 문서 (wiki, 마케팅 소재, 가이드 등)"
+        - "\U0001F4BB 서비스 (웹사이트, 앱, MC 등)"
+    validations:
+      required: true
+  - type: dropdown
     id: part
     attributes:
       label: "요청 파트"
